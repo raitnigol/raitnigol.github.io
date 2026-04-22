@@ -1,7 +1,10 @@
 title: raitnigol
 description: Projects, tools, and experiments by Rait Nigol
+url: "https://raitnigol.github.io"
 theme: minima
 author: Rait Nigol
+plugins:
+  - jekyll-sitemap
 header_pages:
   - projects.md
   - about.md

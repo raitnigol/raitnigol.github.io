@@ -17,14 +17,4 @@ permalink: /about/
   <p>
     The goal is not to mirror every repository, but to keep a curated, readable front page for the projects that are actually worth surfacing.
   </p>
-
-  <p>
-    Elsewhere:
-  </p>
-
-  <ul class="clean-list">
-    {% for social in site.data.socials %}
-      <li><a href="{{ social.url }}" target="_blank" rel="noopener noreferrer">{{ social.name }}</a></li>
-    {% endfor %}
-  </ul>
 </div>
