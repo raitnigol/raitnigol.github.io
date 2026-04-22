@@ -6,12 +6,45 @@
 /* layout */
 
 .wrapper {
-  max-width: 980px;
+  max-width: 920px;
 }
 
 .page-content {
   padding-top: 2.25rem;
   padding-bottom: 3rem;
+}
+
+/* header */
+
+.site-header {
+  border-top: 0;
+  border-bottom: 1px solid #e5e7eb;
+  min-height: auto;
+  padding: 1.25rem 0;
+}
+
+.site-header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.site-title {
+  float: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827 !important;
+}
+
+.site-title:hover {
+  text-decoration: none;
+}
+
+.site-subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
 }
 
 /* intro */
@@ -24,31 +57,71 @@
   margin: 0 0 1rem;
   font-size: 1.05rem;
   color: #4b5563;
+  line-height: 1.65;
 }
 
-.home-links {
+/* socials */
+
+.social-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.button-link {
-  display: inline-block;
-  padding: 0.65rem 1rem;
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border: 1px solid #d1d5db;
-  border-radius: 10px;
+  border-radius: 999px;
   background: #ffffff;
   color: #111827;
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
-.button-link:hover {
-  background: #f9fafb;
+.social-link:hover {
+  transform: translateY(-2px);
   border-color: #9ca3af;
-  transform: translateY(-1px);
+  background: #f9fafb;
   text-decoration: none;
+}
+
+.social-link i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.social-link[aria-label="GitHub"]:hover {
+  color: #111827;
+}
+
+.social-link[aria-label="Facebook"]:hover {
+  color: #1877f2;
+}
+
+.social-link[aria-label="Spotify"]:hover {
+  color: #1db954;
+}
+
+.social-link[aria-label="Reddit"]:hover {
+  color: #ff4500;
+}
+
+.social-link[aria-label="Steam"]:hover {
+  color: #171a21;
+}
+
+.social-link[aria-label="LinkedIn"]:hover {
+  color: #0a66c2;
+}
+
+.social-link[aria-label="YouTube"]:hover {
+  color: #ff0000;
 }
 
 /* repo grid */
@@ -60,7 +133,6 @@
 }
 
 .repo-card {
-  cursor: pointer;
   padding: 1rem 1.1rem;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
@@ -72,14 +144,6 @@
   border-color: #cbd5e1;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
   transform: translateY(-1px);
-}
-
-.repo-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
 }
 
 .repo-title {
@@ -97,69 +161,28 @@
 }
 
 .repo-description {
-  margin: 0.35rem 0 0;
+  margin: 0.45rem 0 0;
   color: #4b5563;
   line-height: 1.55;
 }
 
-/* status */
-
-.repo-status {
-  flex-shrink: 0;
-  display: inline-block;
-  padding: 0.22rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: lowercase;
-  border: 1px solid #d1d5db;
-  background: #f3f4f6;
-  color: #374151;
-}
-
-.repo-status-active {
-  background: #dcfce7;
-  color: #166534;
-  border-color: #bbf7d0;
-}
-
-.repo-status-archived {
-  background: #f3f4f6;
-  color: #6b7280;
-  border-color: #e5e7eb;
-}
-
-/* tags + tech */
-
-.repo-tags,
-.repo-tech {
+.repo-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.85rem;
 }
 
-.tag,
-.tech-pill {
+.tag {
   display: inline-block;
   padding: 0.2rem 0.55rem;
   border: 1px solid #d1d5db;
   border-radius: 999px;
   font-size: 0.82rem;
   line-height: 1.2;
-}
-
-.tag {
   background: #f3f4f6;
   color: #111827;
 }
-
-.tech-pill {
-  background: #fafafa;
-  color: #4b5563;
-}
-
-/* custom tag colors */
 
 .tag-steam {
   background: #e0f2fe;
@@ -239,46 +262,40 @@
   border-color: #fde68a;
 }
 
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+/* footer */
+
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1.25rem 0;
 }
 
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid #d1d5db;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #111827;
-  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+.footer-inner p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
 }
 
-.social-link:hover {
-  transform: translateY(-2px);
-  border-color: #9ca3af;
-  background: #f9fafb;
-  text-decoration: none;
-}
-
-.social-link svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+.footer-inner a {
+  color: #374151;
 }
 
 /* mobile */
 
 @media screen and (max-width: 640px) {
-  .repo-card-header {
-    align-items: flex-start;
-    flex-direction: column;
+  .site-title {
+    font-size: 1.2rem;
+  }
+
+  .site-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-link i {
+    font-size: 18px;
   }
 }
-
