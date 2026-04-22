@@ -57,7 +57,7 @@
 
 - slug: scritchy-scratchy-save-editor
   name: Scritchy Scratchy Save Editor
-  url: https://github.com/raitnigol/scritchy-scratchy-save-editor
+  url: https://raitnigol.github.io/scritchy-scratchy-save-editor/
   description: Base64 save editor for the Scritchy Scratchy game.
 
   featured: true

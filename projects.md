@@ -24,6 +24,9 @@ permalink: /projects/
           </h3>
 
           <p class="repo-description">{{ repo.description }}</p>
+          <p class="repo-link-row">
+            <a class="repo-link" href="{{ repo.url }}" target="_blank" rel="noopener noreferrer">Open project →</a>
+          </p>
 
           {% if repo.tags %}
             <div class="repo-tags">
