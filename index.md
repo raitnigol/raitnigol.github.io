@@ -1,28 +1,52 @@
 ---
-layout: home
-title: Home
+layout: page
+title: Rait Nigol
 permalink: /
 ---
 
-# Rait Nigol
+<div class="home-intro">
+  <p class="home-lead">
+    Personal hub for projects, tools, experiments, and other things I build.
+  </p>
 
-GitHub, projects, links, and other things.
-
-- [GitHub](https://github.com/raitnigol)
+  <div class="home-links">
+    <a class="button-link" href="https://github.com/raitnigol">GitHub</a>
+  </div>
+</div>
 
 ## Featured repositories
 
-{% for repo in site.data.repos %}
-  <article class="repo-card">
-    <h3><a href="{{ repo.url }}">{{ repo.name }}</a></h3>
-    <p>{{ repo.description }}</p>
+<div class="repo-grid">
+  {% assign repos = site.data.repos | where: "featured", true | sort: "priority" %}
+  {% for repo in repos %}
+    <article class="repo-card">
+      <div class="repo-card-header">
+        <h3 class="repo-title">
+          <a href="{{ repo.url }}">{{ repo.name }}</a>
+        </h3>
 
-    {% if repo.tags %}
-      <div class="repo-tags">
-        {% for tag in repo.tags %}
-          <span class="tag tag-{{ tag | slugify }}">{{ tag }}</span>
-        {% endfor %}
+        {% if repo.status %}
+          <span class="repo-status repo-status-{{ repo.status | slugify }}">{{ repo.status }}</span>
+        {% endif %}
       </div>
-    {% endif %}
-  </article>
-{% endfor %}
+
+      <p class="repo-description">{{ repo.description }}</p>
+
+      {% if repo.tags %}
+        <div class="repo-tags">
+          {% for tag in repo.tags %}
+            <span class="tag tag-{{ tag | slugify }}">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if repo.tech %}
+        <div class="repo-tech">
+          {% for item in repo.tech %}
+            <span class="tech-pill">{{ item }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
