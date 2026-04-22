@@ -28,7 +28,21 @@
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/social-preview.png' | relative_url }}">
   <link rel="manifest" href="{{ '/assets/site.webmanifest' | relative_url }}">
-  <meta name="theme-color" content="#111827">
+  <meta id="theme-color-meta" name="theme-color" content="#ffffff">
+  <script>
+    (function() {
+      var key = "site-theme";
+      var stored = null;
+      try {
+        stored = localStorage.getItem(key);
+      } catch (e) {}
+      var systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var selected = stored === "light" || stored === "dark" || stored === "system" ? stored : "system";
+      var resolved = selected === "system" ? (systemDark ? "dark" : "light") : selected;
+      document.documentElement.setAttribute("data-theme", resolved);
+      document.documentElement.setAttribute("data-theme-selection", selected);
+    })();
+  </script>
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -41,11 +55,14 @@
         <p class="site-subtitle">{{ site.description }}</p>
       </div>
 
-      <nav class="site-nav-custom" aria-label="Main navigation">
-        <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
-        <a href="/projects/" {% if page.url == "/projects/" %}aria-current="page"{% endif %}>Projects</a>
-        <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
-      </nav>
+      <div class="site-actions">
+        <nav class="site-nav-custom" aria-label="Main navigation">
+          <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+          <a href="/projects/" {% if page.url == "/projects/" %}aria-current="page"{% endif %}>Projects</a>
+          <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-live="polite">Theme: System</button>
+      </div>
     </div>
   </header>
 
@@ -60,5 +77,68 @@
       <p>Built around <a href="https://github.com/raitnigol" target="_blank" rel="noopener noreferrer">github.com/raitnigol</a></p>
     </div>
   </footer>
+  <script>
+    (function() {
+      var key = "site-theme";
+      var toggle = document.getElementById("theme-toggle");
+      var root = document.documentElement;
+      var themeMeta = document.getElementById("theme-color-meta");
+      if (!toggle) return;
+
+      var options = ["system", "light", "dark"];
+      var labels = { system: "System", light: "Light", dark: "Dark" };
+      var mediaQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+      function getSelection() {
+        var current = root.getAttribute("data-theme-selection");
+        if (current === "system" || current === "light" || current === "dark") return current;
+        return "system";
+      }
+
+      function resolveTheme(selection) {
+        if (selection === "system") {
+          return mediaQuery && mediaQuery.matches ? "dark" : "light";
+        }
+        return selection;
+      }
+
+      function applyTheme(selection) {
+        var resolved = resolveTheme(selection);
+        root.setAttribute("data-theme-selection", selection);
+        root.setAttribute("data-theme", resolved);
+        toggle.textContent = "Theme: " + labels[selection];
+        toggle.setAttribute("aria-label", "Theme mode: " + labels[selection] + ". Click to switch.");
+        toggle.setAttribute("aria-pressed", selection === "dark" ? "true" : "false");
+        if (themeMeta) themeMeta.setAttribute("content", resolved === "dark" ? "#111827" : "#ffffff");
+      }
+
+      function storeTheme(selection) {
+        try {
+          if (selection === "system") {
+            localStorage.removeItem(key);
+          } else {
+            localStorage.setItem(key, selection);
+          }
+        } catch (e) {}
+      }
+
+      toggle.addEventListener("click", function() {
+        var current = getSelection();
+        var next = options[(options.indexOf(current) + 1) % options.length];
+        storeTheme(next);
+        applyTheme(next);
+      });
+
+      if (mediaQuery) {
+        mediaQuery.addEventListener("change", function() {
+          if (getSelection() === "system") {
+            applyTheme("system");
+          }
+        });
+      }
+
+      applyTheme(getSelection());
+    })();
+  </script>
 </body>
 </html>
