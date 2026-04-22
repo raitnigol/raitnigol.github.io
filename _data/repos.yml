@@ -1,13 +1,54 @@
-- name: buff163-tools
+- slug: buff163-tools
+  name: buff163-tools
   url: https://github.com/raitnigol/buff163-tools
   description: Userscript toolkit for Buff163 with inventory and pricing helpers.
-  status: active
-  priority: 1
-  tags: [userscript, steam, trading]
 
-- name: Steam-Market-Arbitrage-Calculator
+  featured: true
+  priority: 1
+  status: active
+  category: userscript
+
+  tags:
+    - steam
+    - trading
+    - inventory
+
+  tech:
+    - javascript
+    - tampermonkey
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started: 2025
+  last_major_update: 2026
+
+- slug: steam-market-arbitrage-calculator
+  name: Steam Market Arbitrage Calculator
   url: https://github.com/raitnigol/Steam-Market-Arbitrage-Calculator
-  description: Tools for comparing market values and trade opportunities.
-  status: archived
+  description: Tools for comparing Steam market values and trade opportunities.
+
+  featured: true
   priority: 2
-  tags: [steam, trading, calculator]
+  status: archived
+  category: tool
+
+  tags:
+    - steam
+    - market
+    - trading
+
+  tech:
+    - javascript
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:
