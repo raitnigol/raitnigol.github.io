@@ -1,11 +1,11 @@
 ---
 layout: home
-title: Nigol
+title: Home
+permalink: /
 ---
 
-# Nigol
+# Rait Nigol
 
-Welcome to my site.
+GitHub, projects, links, and other things.
 
 - [GitHub](https://github.com/raitnigol)
-- [Bot account](https://steamcommunity.com/id/nigol_bot)
