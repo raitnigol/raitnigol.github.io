@@ -26,6 +26,7 @@
   year_started: 2025
   last_major_update: 2026
 
+
 - slug: steam-market-arbitrage-calculator
   name: Steam Market Arbitrage Calculator
   url: https://github.com/raitnigol/Steam-Market-Arbitrage-Calculator
@@ -43,6 +44,149 @@
 
   tech:
     - javascript
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:
+
+
+- slug: scritchy-scratchy-save-editor
+  name: Scritchy Scratchy Save Editor
+  url: https://github.com/raitnigol/scritchy-scratchy-save-editor
+  description: Base64 save editor for the Scritchy Scratchy game.
+
+  featured: true
+  priority: 3
+  status: active
+  category: tool
+
+  tags:
+    - game
+    - save-editor
+    - base64
+
+  tech:
+    - javascript
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:
+
+
+- slug: osta-ee-tools
+  name: osta-ee-tools
+  url: https://github.com/raitnigol/osta-ee-tools
+  description: Userscript that extracts structured listing data from osta.ee pages and provides human-readable summaries with JSON export tools.
+
+  featured: true
+  priority: 4
+  status: active
+  category: userscript
+
+  tags:
+    - osta
+    - scraping
+    - automation
+
+  tech:
+    - javascript
+    - tampermonkey
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:
+
+
+- slug: iha-ee-tasuta-vip
+  name: IHA.EE Tasuta VIP
+  url: https://github.com/raitnigol/IHA.EE-TASUTA-VIP
+  description: Userscript that modifies IHA.EE by removing clutter, customizing UI, and adding enhanced functionality including ad removal and layout changes.
+
+  featured: false
+  priority: 5
+  status: active
+  category: userscript
+
+  tags:
+    - iha
+    - ui
+    - customization
+
+  tech:
+    - javascript
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:
+
+
+- slug: hypervm-gui
+  name: HYPERVM-GUI
+  url: https://github.com/raitnigol/HYPERVM-GUI
+  description: PowerShell-based GUI for simplifying the creation and management of Hyper-V virtual machines.
+
+  featured: false
+  priority: 6
+  status: archived
+  category: tool
+
+  tags:
+    - hyper-v
+    - virtualization
+    - windows
+
+  tech:
+    - powershell
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:
+
+
+- slug: fivem-loadingscreen
+  name: FiveM Loading Screen
+  url: https://github.com/raitnigol/fivem_loadingscreen
+  description: Customizable FiveM loading screen with music controls, real-time clock, and UI enhancements.
+
+  featured: false
+  priority: 7
+  status: archived
+  category: game
+
+  tags:
+    - fivem
+    - game
+    - ui
+
+  tech:
+    - javascript
+    - html
+    - css
 
   links:
     demo:
