@@ -13,12 +13,16 @@ GitHub, projects, links, and other things.
 ## Featured repositories
 
 {% for repo in site.data.repos %}
-### [{{ repo.name }}]({{ repo.url }})
+  <article class="repo-card">
+    <h3><a href="{{ repo.url }}">{{ repo.name }}</a></h3>
+    <p>{{ repo.description }}</p>
 
-{{ repo.description }}
-
-{% if repo.tags %}
-Tags: {{ repo.tags | join: ", " }}
-{% endif %}
-
+    {% if repo.tags %}
+      <div class="repo-tags">
+        {% for tag in repo.tags %}
+          <span class="tag tag-{{ tag | slugify }}">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </article>
 {% endfor %}
