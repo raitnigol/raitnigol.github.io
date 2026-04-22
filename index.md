@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Rait Nigol
+title: ""
 permalink: /
 ---
 
