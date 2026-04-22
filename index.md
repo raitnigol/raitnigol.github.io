@@ -10,11 +10,6 @@ permalink: /
     Personal hub for projects, tools, experiments, and other things I build.
   </p>
 
-  <div class="home-cta">
-    <a class="cta-button cta-primary" href="/projects/">View Projects</a>
-    <a class="cta-button cta-secondary" href="/about/">About</a>
-  </div>
-
   <div class="social-links">
     {% for social in site.data.socials %}
       <a
