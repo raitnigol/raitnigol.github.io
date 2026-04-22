@@ -1,0 +1,27 @@
+- name: GitHub
+  url: https://github.com/raitnigol
+  icon: github
+
+- name: Facebook
+  url: https://www.facebook.com/rait.nigol
+  icon: facebook
+
+- name: Spotify
+  url: https://open.spotify.com/user/1190538422
+  icon: spotify
+
+- name: Reddit
+  url: https://www.reddit.com/user/xdNigol/
+  icon: reddit
+
+- name: Steam
+  url: https://steamcommunity.com/id/nigol_
+  icon: steam
+
+- name: LinkedIn
+  url: https://www.linkedin.com/in/raitnigol/
+  icon: linkedin
+
+- name: YouTube
+  url: https://www.youtube.com/@Nigol/featured
+  icon: youtube
