@@ -196,3 +196,32 @@
 
   year_started:
   last_major_update:
+
+- slug: fivem-loadingscreen
+  name: FiveM Loading Screen
+  url: https://github.com/raitnigol/fivem_loadingscreen
+  description: Customizable FiveM loading screen with music controls, real-time clock, and UI enhancements.
+
+  featured: false
+  priority: 7
+  status: archived
+  category: game
+
+  tags:
+    - fivem
+    - game
+    - ui
+
+  tech:
+    - javascript
+    - html
+    - css
+
+  links:
+    demo:
+    docs:
+    npm:
+    other:
+
+  year_started:
+  last_major_update:

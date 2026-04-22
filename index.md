@@ -20,15 +20,9 @@ permalink: /
   {% assign repos = site.data.repos | where: "featured", true | sort: "priority" %}
   {% for repo in repos %}
     <article class="repo-card">
-      <div class="repo-card-header">
-        <h3 class="repo-title">
-          <a href="{{ repo.url }}">{{ repo.name }}</a>
-        </h3>
-
-        {% if repo.status %}
-          <span class="repo-status repo-status-{{ repo.status | slugify }}">{{ repo.status }}</span>
-        {% endif %}
-      </div>
+      <h3 class="repo-title">
+        <a href="{{ repo.url }}">{{ repo.name }}</a>
+      </h3>
 
       <p class="repo-description">{{ repo.description }}</p>
 
@@ -36,14 +30,6 @@ permalink: /
         <div class="repo-tags">
           {% for tag in repo.tags %}
             <span class="tag tag-{{ tag | slugify }}">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if repo.tech %}
-        <div class="repo-tech">
-          {% for item in repo.tech %}
-            <span class="tech-pill">{{ item }}</span>
           {% endfor %}
         </div>
       {% endif %}
