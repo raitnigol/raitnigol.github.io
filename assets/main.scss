@@ -3,8 +3,6 @@
 
 @import "minima";
 
-/* layout */
-
 .wrapper {
   max-width: 920px;
 }
@@ -24,6 +22,13 @@
 }
 
 .site-header-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-branding {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -47,13 +52,33 @@
   font-size: 0.95rem;
 }
 
+.site-nav-custom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.15rem;
+}
+
+.site-nav-custom a {
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-nav-custom a:hover,
+.site-nav-custom a[aria-current="page"] {
+  color: #111827;
+  text-decoration: underline;
+}
+
 /* intro */
 
 .home-intro {
   margin-bottom: 2rem;
 }
 
-.home-lead {
+.home-lead,
+.page-intro {
   margin: 0 0 1rem;
   font-size: 1.05rem;
   color: #4b5563;
@@ -96,35 +121,15 @@
   line-height: 1;
 }
 
-.social-link[aria-label="GitHub"]:hover {
-  color: #111827;
-}
+.social-link[aria-label="GitHub"]:hover { color: #111827; }
+.social-link[aria-label="Facebook"]:hover { color: #1877f2; }
+.social-link[aria-label="Spotify"]:hover { color: #1db954; }
+.social-link[aria-label="Reddit"]:hover { color: #ff4500; }
+.social-link[aria-label="Steam"]:hover { color: #171a21; }
+.social-link[aria-label="LinkedIn"]:hover { color: #0a66c2; }
+.social-link[aria-label="YouTube"]:hover { color: #ff0000; }
 
-.social-link[aria-label="Facebook"]:hover {
-  color: #1877f2;
-}
-
-.social-link[aria-label="Spotify"]:hover {
-  color: #1db954;
-}
-
-.social-link[aria-label="Reddit"]:hover {
-  color: #ff4500;
-}
-
-.social-link[aria-label="Steam"]:hover {
-  color: #171a21;
-}
-
-.social-link[aria-label="LinkedIn"]:hover {
-  color: #0a66c2;
-}
-
-.social-link[aria-label="YouTube"]:hover {
-  color: #ff0000;
-}
-
-/* repo grid */
+/* cards */
 
 .repo-grid {
   display: grid;
@@ -262,6 +267,41 @@
   border-color: #fde68a;
 }
 
+/* sections */
+
+.project-section + .project-section {
+  margin-top: 2.5rem;
+}
+
+.category-heading {
+  margin-bottom: 0.4rem;
+}
+
+.content-block {
+  color: #374151;
+  line-height: 1.65;
+}
+
+.clean-list {
+  margin-left: 1.2rem;
+}
+
+.more-link {
+  margin-top: 1.25rem;
+}
+
+/* 404 */
+
+.not-found {
+  padding: 3rem 0 1rem;
+  text-align: center;
+}
+
+.not-found h1 {
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+}
+
 /* footer */
 
 .site-footer {
@@ -281,13 +321,14 @@
 
 /* mobile */
 
-@media screen and (max-width: 640px) {
-  .site-title {
-    font-size: 1.2rem;
+@media screen and (max-width: 720px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .site-subtitle {
-    font-size: 0.9rem;
+  .site-nav-custom {
+    gap: 0.8rem;
   }
 
   .social-link {

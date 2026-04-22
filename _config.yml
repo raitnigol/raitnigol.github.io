@@ -2,4 +2,6 @@ title: raitnigol
 description: Projects, tools, and experiments by Rait Nigol
 theme: minima
 author: Rait Nigol
-header_pages: []
+header_pages:
+  - projects.md
+  - about.md

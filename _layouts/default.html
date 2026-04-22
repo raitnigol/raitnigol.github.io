@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% if page.title and page.title != "" %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+  <meta property="og:title" content="{% if page.title and page.title != "" %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/social-preview.png' | absolute_url }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title and page.title != "" %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ '/assets/social-preview.png' | absolute_url }}">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper site-header-inner">
+      <div class="site-branding">
+        <a class="site-title" href="/">{{ site.title }}</a>
+        <p class="site-subtitle">{{ site.description }}</p>
+      </div>
+
+      <nav class="site-nav-custom" aria-label="Main navigation">
+        <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+        <a href="/projects/" {% if page.url == "/projects/" %}aria-current="page"{% endif %}>Projects</a>
+        <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper footer-inner">
+      <p>Built around <a href="https://github.com/raitnigol" target="_blank" rel="noopener noreferrer">github.com/raitnigol</a></p>
+    </div>
+  </footer>
+</body>
+</html>
